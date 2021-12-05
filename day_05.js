@@ -10,6 +10,10 @@ const { coordinates, maxX, maxY } = input
     const [toX, toY] = to.split(',').map(v => parseInt(v));
     result.maxX = Math.max(result.maxX, fromX, toX);
     result.maxY = Math.max(result.maxY, fromY, toY);
+    /* TODO Ought to rewrite this. The full set of coordinates should be generated here.
+      Then it would be only a matter of incrementing the hits in the matrix. Would be no
+      need to guess if dialognal or not...
+    */
     result.coordinates.push({ fromX, fromY, toX, toY });
     return result;
   }, {
